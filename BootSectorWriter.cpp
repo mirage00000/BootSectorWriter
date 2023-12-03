@@ -11,10 +11,13 @@ int main() {
     // Get the file path from the user
     std::cout << "Enter the path to the binary file (absolute or relative): ";
     std::getline(std::cin, filePath);
+    std::cin.clear();
 
     // Get the drive number from the user
     std::cout << "Enter the drive number (e.g., 0 for PhysicalDrive0, the current system drive): ";
     std::cin >> driveNumber;
+    std::cin.clear();
+    std::cin.ignore(1000, '\n');
 
     // Open the binary file for reading
     std::ifstream file(filePath, std::ios::binary);
